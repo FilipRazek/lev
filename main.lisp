@@ -14,11 +14,11 @@
     (let ((v0 (array-0-n n))
           (v1 (make-zero-array (1+ n))))
       (replace v1 v0)
-      (loop for i from 0 below m do
-        (loop for j from 0 below n for v0j = (aref v0 j) and v1j = (aref v1 j) do
+      (loop for i from 0 below m for char-a = (aref a i) do
+        (loop for j from 0 below n for v0j = (aref v0 j) and v1j = (aref v1 j) and char-b = (aref b j) do
           (let ((deletion-cost (1+ v0j))
                 (insertion-cost (1+ v1j))
-                (substitution-cost (+ v0j (bool->int (char/= (aref a i) (aref b j))))                                       ))
+                (substitution-cost (+ v0j (bool->int (char/= char-a char-b)))))
             (setf (aref v1 (1+ j)) (min deletion-cost insertion-cost substitution-cost))))
         (rotatef v0 v1))
       (aref v0 n))))
