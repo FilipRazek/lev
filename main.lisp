@@ -3,13 +3,16 @@
     (loop for i from 0 to n do (setf (aref a i) i))
     a))
 
+(defun make-zero-array (m)
+  (make-array m :initial-element 0))
+
 (defun bool->int (b)
   (if b 1 0))
 
 (defun lev (a b)
   (let ((m (length a)) (n (length b)))
     (let ((v0 (array-0-n n))
-          (v1 (make-array (1+ n) :initial-element 0)))
+          (v1 (make-zero-array (1+ n))))
       (replace v1 v0)
       (loop for i from 0 below m do
         (loop for j from 0 below n for v0j = (aref v0 j) and v1j = (aref v1 j) do
