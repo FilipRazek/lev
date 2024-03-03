@@ -16,7 +16,6 @@
           (let ((deletion-cost (1+ v0j))
                 (insertion-cost (1+ v1j))
                 (substitution-cost (+ v0j (bool->int (char/= (aref a i) (aref b j))))                                       ))
-              (let ((minimal-cost (min deletion-cost insertion-cost substitution-cost)))
-                (setf (aref v1 (1+ j)) minimal-cost))))
+            (setf (aref v1 (1+ j)) (min deletion-cost insertion-cost substitution-cost))))
         (rotatef v0 v1))
       (aref v0 n))))
