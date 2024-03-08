@@ -1,1 +1,1 @@
-sbcl --noinform --load main.lisp --script tests.lisp && echo "Tests passed!"
+sbcl --noinform --load main.lisp --eval "(run:run)"

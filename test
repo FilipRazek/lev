@@ -1,0 +1,1 @@
+sbcl --noinform --load main.lisp --eval "(test:test)"
