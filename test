@@ -1,1 +1,1 @@
-sbcl --noinform --load main.lisp --eval "(test:test)"
+sbcl --noinform --load package.lisp --load test.lisp --eval "(test:test)"

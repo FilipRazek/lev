@@ -1,1 +1,1 @@
-sbcl --noinform --load main.lisp --eval "(run:run)"
+sbcl --noinform --load package.lisp --load run.lisp --eval "(run:run)"

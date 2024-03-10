@@ -10,7 +10,3 @@
   (:use :cl :compute)
   (:export :test))
 
-(load "compute.lisp")
-(load "run.lisp")
-(load "test.lisp")
-

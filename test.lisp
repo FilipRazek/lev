@@ -1,5 +1,7 @@
 (in-package :test)
 
+(load "compute.lisp")
+
 (defun test ()
   (assert (= (compute:levenshtein "Sunday" "Saturday") 3))
   (assert (= (compute:levenshtein "kitten" "sitting") 3))
