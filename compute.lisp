@@ -9,10 +9,11 @@
   (if b 1 0))
 
 (defun levenshtein (a b)
-  (let ((n (length b)))
-    (let ((v0 (array-0-n (1+ n)))
-          (v1 (array-0-n (1+ n))))
-      (loop for char-a across a do
+  (let ((n (length b)) (m (length a)))
+    (let ((v0 (array-0-n n))
+          (v1 (make-array (1+ n))))
+      (loop for char-a across a for i from 1 upto m do
+        (setf (aref v1 0) i)
         (loop for j from 1 upto n
               for v0j across v0
               for v1j across v1
